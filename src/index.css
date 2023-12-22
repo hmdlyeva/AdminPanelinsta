@@ -1,3 +1,10 @@
-body{
-    margin: 0 auto;
+body {
+  margin: 0 auto;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.cont{
+  margin: 0 auto;
 }
