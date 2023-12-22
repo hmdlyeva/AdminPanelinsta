@@ -1,0 +1,13 @@
+/* .table_css{
+    background: rgb(100,67,249);
+background: linear-gradient(90deg, rgba(100,67,249,1) 0%, rgba(174,52,230,1) 100%);
+} */
+
+button{
+    padding: 10px 15px;
+border-radius: 20px;
+border: none;
+background-color: black;
+color: white;
+cursor: pointer;
+}
