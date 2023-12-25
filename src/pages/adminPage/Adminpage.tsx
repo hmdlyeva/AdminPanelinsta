@@ -11,7 +11,7 @@ const Adminpage = () => {
     <>
       <Navbar setinpValue={setinpValue} />
       <div className="container">
-      <AdminPage/>
+      <AdminPage inpValue={inpValue}/>
         {/* <TableAdmin inpValue={inpValue} /> */}
       </div>
     </>

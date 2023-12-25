@@ -1,0 +1,18 @@
+@media (max-width: 992px) {
+    .adminpage {
+      display: none;
+    }
+    .bottomnav{
+        display: block;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .adminpage {
+      display: block;
+      overflow: hidden;
+    }
+    .bottomnav{
+        display: none;
+    }
+  }

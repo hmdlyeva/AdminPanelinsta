@@ -56,13 +56,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 // type Props = {}
 
-const Navbar = ({ setInpValue }: any) => {
+const Navbar = ({ setinpValue }: any) => {
   const [users, setUsers] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://userapideployda.onrender.com/users")
-      .then((res) => setUsers(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://userapideployda.onrender.com/users")
+  //     .then((res) => setUsers(res.data));
+  // }, []);
   return (
     <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: "black" }}>
         <div className="container">
@@ -96,8 +96,8 @@ const Navbar = ({ setInpValue }: any) => {
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
                 onChange={(e) => {
-                  console.log(e.target.value);
-                  setInpValue(e.target.value);
+                  // console.log(e.target.value);
+                  setinpValue(e.target.value);
                 }}
               />
             </Search>

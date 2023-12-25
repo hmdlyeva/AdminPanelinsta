@@ -5,7 +5,11 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import TableAdmin from "../tableAdmin/TableAdmin";
 import AddUser from "../addUserPage/AddUser";
-
+import PosterUsers from "../posterUsers/PosterUsers";
+import { colors } from "@mui/material";
+import NnotificationPage from "../notificationPage/NnotificationPage";
+import BottomNav from "../bottomNav/BottomNav";
+import './adminPage.css'
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -39,21 +43,23 @@ function a11yProps(index: number) {
   };
 }
 
-const AdminPage = () => {
+const AdminPage = ({inpValue}:any) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
   return (
-    // <div className="container">
+    <>
+    <div className="adminpage" style={{ overflow: "hidden"}} >
 
     <Box
       sx={{
         flexGrow: 1,
         bgcolor: "background.paper",
         display: "flex",
-        height: 224,
+        height:600,
+        
       }}
     >
       <Tabs
@@ -64,38 +70,36 @@ const AdminPage = () => {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: "divider" }}
       >
-        <Tab label="Users" {...a11yProps(0)} style={{marginTop:"15px"}} />
-        <Tab label="Add User" {...a11yProps(1)} />
-        <Tab label="Posts" {...a11yProps(2)} />
-        <Tab label="Notification" {...a11yProps(3)} />
-        {/* <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} /> */}
+        <Tab label="Users" {...a11yProps(0)} style={{marginTop:"15px", color:"orange" }} />
+        <Tab label="Add User" {...a11yProps(1)}style={{marginTop:"10px", color:"orange" }} />
+        <Tab label="Posts" {...a11yProps(2)} style={{marginTop:"10px", color:"orange" }}/>
+        <Tab label="Notification" {...a11yProps(3)} style={{marginTop:"10px", color:"orange" }}/>
+      
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} >
 
-        <TableAdmin />
+        <TableAdmin inpValue={inpValue}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <AddUser/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Posts
+        <PosterUsers/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Notification
+        <NnotificationPage/>
       </TabPanel>
-      {/* <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel> */}
+   
     </Box>
-    // {/* </div> */}
+
+
+
+     </div>
+     <div className="bottomnav">
+
+    <BottomNav/>
+     </div>
+    </>
   );
 };
 
